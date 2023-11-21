@@ -1,0 +1,102 @@
+# ************************************************************
+# Sequel Ace SQL dump
+# Version 20062
+#
+# https://sequel-ace.com/
+# https://github.com/Sequel-Ace/Sequel-Ace
+#
+# Host: 127.0.0.1 (MySQL 11.1.2-MariaDB-1:11.1.2+maria~ubu2204)
+# Database: myComixDB
+# Generation Time: 2023-11-21 14:24:42 +0000
+# ************************************************************
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+SET NAMES utf8mb4;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE='NO_AUTO_VALUE_ON_ZERO', SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump of table authours
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `authours`;
+
+CREATE TABLE `authours` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+# Dump of table comics
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `comics`;
+
+CREATE TABLE `comics` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `publisher_id` int(11) unsigned DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `archived` tinyint(4) NOT NULL DEFAULT 0,
+  `illustrator_id` int(11) unsigned DEFAULT NULL,
+  `author_id` int(11) unsigned DEFAULT NULL,
+  `genre_id` int(11) unsigned DEFAULT NULL,
+  `release_year` year(4) DEFAULT NULL,
+  `condition` decimal(3,1) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+# Dump of table genres
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `genres`;
+
+CREATE TABLE `genres` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+# Dump of table illustrators
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `illustrators`;
+
+CREATE TABLE `illustrators` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+# Dump of table publishers
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `publishers`;
+
+CREATE TABLE `publishers` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
+
+
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
