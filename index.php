@@ -15,6 +15,9 @@ $comics = $comicsModel ->getAllComics();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyComix</title>
+
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/table.css">
 </head>
 <body>
 <div>

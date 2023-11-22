@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+:root {
+    --dark-blue:  #1515ed;
+    --light-blue: #6fbff5;
+    --black: #121212;
+    --black-opaque: #0004;
+    --grey: #282828;
+    --light-grey: #575757;
+    --lighter-grey: #8b8b8b;
+}
+* {
+    margin-top: 10;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--black);
+}
