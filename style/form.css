@@ -1,23 +1,19 @@
-.btnAdd {
-    background-color: var(--light-grey); 
-}
-
 .formContainer {
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 25vw;
     min-height: 30vh;
     min-width: 200px;
-    margin: 0 auto;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
     padding: 3.5rem;
     border-radius: 6px;
     background-color: var(--dark-blue);
-  }
+}
   
   .form {
     display: flex;
@@ -68,3 +64,8 @@
     background-color: var(--light-blue);
     cursor: pointer;
   }
+
+  .blur {
+    filter: blur(5px);  /* Apply the blur effect */
+    pointer-events: none;  /* Disable pointer events on the blurred element */
+}
