@@ -1,0 +1,20 @@
+.toolbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.btnAdd {
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    background-color: var(--light-grey);
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.btnAdd:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}

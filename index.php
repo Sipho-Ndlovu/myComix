@@ -19,6 +19,8 @@ $comics = $comicsModel ->getAllComics();
         <link rel="stylesheet" href="style/common.css">
         <link rel="stylesheet" href="style/table.css">
         <link rel="stylesheet" href="style/navbar.css">
+        <link rel="stylesheet" href="style/form.css">
+        <link rel="stylesheet" href="style/toolbar.css">
 
         <link 
                 rel="stylesheet" 
@@ -45,19 +47,30 @@ $comics = $comicsModel ->getAllComics();
                 </ul>
             </nav>
 
+            <div class="toolbar">
+                <button class="btnAdd">Add Book</button>
+            </div>
+
+
             <?php // We can now use our ViewHelper to display the products
             // Because the methods in the ViewHelper are static, we do not need to instantiate
             // a ViewHelper object
             echo ComicViewHelper::displayAllComics($comics);
             ?>
-            <section>
+
+            <div class="formContainer">
                 <div class="formClose">&times;</div>
-                    <div class="circle">
-                        <span class="registerHeading"></span>
-                        <span class="registerBody"></span>
-                    </div>
-                </div>
-            </section>
+                <form class="form">
+                    <input type="text" name="Book Title" id="title" placeholder="Book Title" />
+                    <input type="text" name="Author" id="author" placeholder="Author" />
+                    <input type="text" name="Illustrator" id="illustrator" placeholder="Illustrator" />
+                    <input type="text" name="Genre" id="genre" placeholder="Genre" />
+                    <input type="text" name="Publisher" id="publisher" placeholder="Publisher" />
+                    <input type="text" name="Release_Year" id="release_year" placeholder="Release Year" />
+                    <input type="text" name="Condition" id="condition" placeholder="condition" />
+                    <input type="submit" value="Add Book">
+                </form>
+            </div>
 
             <div class="footer">
                &copy; Siphosenkosi Ndlovu 2023

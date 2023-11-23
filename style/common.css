@@ -4,12 +4,14 @@
     --light-blue: #6fbff5;
     --black: #121212;
     --blacker: #000;
-    --black-opaque: #0004;
+    --black-opaque: #0006;
     --blue-opaque: rgba(0,38,198,0.5);
+    --white-opaque: #fff6;
+    --white: #fff;
     --grey: #282828;
     --light-grey: #575757;
     --lighter-grey: #8b8b8b;
-    --transparent: #0000;
+    --red: #ff0800;
 }
 * {
     padding: 0;
@@ -27,6 +29,17 @@ body {
     overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--white-opaque);
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: var(--black-opaque);
+}
+
 body div {
     display: flex;
     flex-direction: column;
@@ -34,9 +47,11 @@ body div {
 }
 
 .footer{
+    display: flex;
     text-align: center;
     background-color: var(--grey);
     padding: 10px;
     font-size: .75rem;
     color: var(--blacker);
+    width: 100vw;
 }

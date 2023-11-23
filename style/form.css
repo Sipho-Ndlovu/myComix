@@ -1,0 +1,70 @@
+.btnAdd {
+    background-color: var(--light-grey); 
+}
+
+.formContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 25vw;
+    min-height: 30vh;
+    min-width: 200px;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 3.5rem;
+    border-radius: 6px;
+    background-color: var(--dark-blue);
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Occupy full width of form container */
+  }
+
+  .formClose {
+    display: inline-block;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: var(--red);
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 6px;
+    height: 30px;
+    line-height: 30px; /* Ensure the icon is vertically centered */
+  }
+  
+  .formClose:hover {
+    background-color: var(--red);
+    color: var(--white);
+  }
+  
+  .form input {
+    width: 80%;
+    min-width: 150px; /* Occupy full width within the form */
+    margin-top: 0.5rem; /* Add spacing between inputs */
+    padding: 9px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+  }
+
+  .form input:focus {
+    outline: 3px solid var(--blacker);
+  }
+
+  .form input[type=submit] {
+    background-color: var(--light-grey);
+  }
+  
+  .form input[type=submit]:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+  }
