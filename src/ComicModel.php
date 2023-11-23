@@ -30,7 +30,9 @@ class ComicsModel
                 ON `comics`.`illustrator_id` = `illustrators`.`id`
                 
             INNER JOIN `genres`
-                ON `comics`.`genre_id` = `genres`.`id`");
+                ON `comics`.`genre_id` = `genres`.`id`
+        
+        WHERE `comics`.`archived` = 0 ");
             
         $query->execute();
         $comics = $query->fetchAll();

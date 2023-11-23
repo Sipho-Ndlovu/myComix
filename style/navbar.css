@@ -1,0 +1,54 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--grey);
+    width: 100vw;
+}
+
+ul {
+    width: 30%;
+}
+
+.logo p.title {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    white-space: nowrap;
+    font-size: 2rem;
+}
+
+nav a {
+    color: var(--blacker);
+    text-decoration: none;
+    list-style: none;
+    white-space: nowrap;
+    padding: 0 20px;
+}
+
+
+nav, ul {
+    display: flex;
+    list-style: none;
+}
+
+nav .fa {
+    color: white;
+    display: none;
+}
+
+i, li {
+    font-size: 1.3rem;
+    padding-right: 5%;
+}
+
+nav ul li a {
+    position: relative;
+}
+
+.logo {
+    margin-left: 2%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    display: flex;
+}
