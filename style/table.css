@@ -77,7 +77,21 @@ table, th, td {
     border-radius: 2rem;
 }
 
+.btnCol {
+    display: flex;
+    justify-content: center;
+    background-color: var(--light-blue);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 2rem;
+}
+
 .btnEdit:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.btnCol:hover {
     background-color: var(--light-blue);
     cursor: pointer;
 }

@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 11.1.2-MariaDB-1:11.1.2+maria~ubu2204)
 # Database: myComixDB
-# Generation Time: 2023-11-22 15:40:22 +0000
+# Generation Time: 2023-11-24 10:09:01 +0000
 # ************************************************************
 
 
@@ -37,7 +37,7 @@ LOCK TABLES `authors` WRITE;
 INSERT INTO `authors` (`id`, `name`)
 VALUES
 	(1,'Stan Lee'),
-	(3,'Bryan Lee O\'Malley');
+	(2,'Bryan Lee O\'malley');
 
 /*!40000 ALTER TABLE `authors` ENABLE KEYS */;
 UNLOCK TABLES;

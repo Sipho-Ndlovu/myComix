@@ -6,7 +6,8 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $comicsModel = new ComicsModel($db);
 
-$comics = $comicsModel ->getAllComics();
+$comics = $comicsModel ->getCollection();
+
 ?>
 
 <!DOCTYPE html>
@@ -55,13 +56,13 @@ $comics = $comicsModel ->getAllComics();
             <?php // We can now use our ViewHelper to display the products
             // Because the methods in the ViewHelper are static, we do not need to instantiate
             // a ViewHelper object
-            echo ComicViewHelper::displayAllComics($comics);
+            echo ComicViewHelper::displayCollection($comics);
             ?>
         </div>
 
         <div class="formContainer">
             <div class="formClose">&times;</div>
-            <form class="form">
+            <form class="form" method="POST" action="src/addForm.php">
                 <span>Add book</span>
                 <input type="text" name="Book Title" id="title" placeholder="Book Title" />
                 <input type="text" name="Author" id="author" placeholder="Author" />
@@ -70,6 +71,7 @@ $comics = $comicsModel ->getAllComics();
                 <input type="text" name="Publisher" id="publisher" placeholder="Publisher" />
                 <input type="text" name="Release_Year" id="release_year" placeholder="Release Year" />
                 <input type="text" name="Condition" id="condition" placeholder="condition" />
+                <input type="text" name="Image_Link" id="image" placeholder="Image Link" />
                 <input type="submit" value="Add Book">
             </form>
         </div>
