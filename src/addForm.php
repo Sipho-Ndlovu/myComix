@@ -12,9 +12,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $db = new PDO('mysql:host=db; dbname=MyComixDB', 'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-    $db = new PDO('mysql:host=db; dbname=MyComixDB', 'root', 'password');
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
     $query = $db->prepare('SELECT `id` FROM `authors` WHERE `name` = :author');
     $query->bindParam(':author', $author);
     $query->execute();

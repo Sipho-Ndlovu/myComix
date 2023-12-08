@@ -55,22 +55,6 @@ $comics = $comicsModel ->getArchive();
             ?>
         </div>
 
-        <div class="formContainer">
-            <div class="formClose">&times;</div>
-            <form class="form" method="POST" action="src/addForm.php">
-                <span>Add book</span>
-                <input type="text" name="Book Title" id="title" placeholder="Book Title" />
-                <input type="text" name="Author" id="author" placeholder="Author" />
-                <input type="text" name="Illustrator" id="illustrator" placeholder="Illustrator" />
-                <input type="text" name="Genre" id="genre" placeholder="Genre" />
-                <input type="text" name="Publisher" id="publisher" placeholder="Publisher" />
-                <input type="text" name="Release_Year" id="release_year" placeholder="Release Year" />
-                <input type="text" name="Condition" id="condition" placeholder="condition" />
-                <input type="text" name="Image_Link" id="image" placeholder="Image Link" />
-                <input type="submit" value="Add Book">
-            </form>
-        </div>
-
         <div class="footer">
                &copy; Siphosenkosi Ndlovu 2023
             </div>

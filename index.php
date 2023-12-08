@@ -50,7 +50,7 @@ $comics = $comicsModel ->getCollection();
             </nav>
 
             <div class="toolbar">
-                <button class="btnAdd">Add Book</button>
+                <button class="btnAdd">Add Comic</button>
             </div>
 
             <?php // We can now use our ViewHelper to display the products
@@ -63,7 +63,7 @@ $comics = $comicsModel ->getCollection();
         <div class="formContainer">
             <div class="formClose">&times;</div>
             <form class="form" method="POST" action="src/addForm.php">
-                <span>Add book</span>
+                <span>Add Comic</span>
                 <input type="text" name="Book Title" id="title" placeholder="Book Title" />
                 <input type="text" name="Author" id="author" placeholder="Author" />
                 <input type="text" name="Illustrator" id="illustrator" placeholder="Illustrator" />
@@ -72,7 +72,7 @@ $comics = $comicsModel ->getCollection();
                 <input type="text" name="Release_Year" id="release_year" placeholder="Release Year" />
                 <input type="text" name="Condition" id="condition" placeholder="condition" />
                 <input type="text" name="Image_Link" id="image" placeholder="Image Link" />
-                <input type="submit" value="Add Book">
+                <input type="submit" value="Add Comic">
             </form>
         </div>
 

@@ -10,7 +10,7 @@ class ComicViewHelper
         $output = '';
         $table = "<main class='table'>
                     <section class='tableHeader'>
-                        <h1>My collection</h1>
+                        <h1>My Archive</h1>
                      </section>
                     <section class='tableBody'>
                         <table>
@@ -40,7 +40,7 @@ class ComicViewHelper
             $output .= "<td>$comic->publisher</td>";
             $output .= "<td>$comic->release_year</td>";
             $output .= "<td>$comic->condition</td>";
-            $output .= "<td><div class='btnCol'>Move to collection</div></td>";
+            $output .= "<td><div class='btnCol'>Restore</div></td>";
             $output .= "</tr>";
         }
         return "$table $output </tbody></table></section></main>";
@@ -48,12 +48,11 @@ class ComicViewHelper
 
     public static function displayCollection(array $comics): string
     {
-        
         $output = '';
         $table = "<main class='table'>
                     <section class='tableHeader'>
-                        <h1>My collection</h1>
-                     </section>
+                        <h1>My Collection</h1>
+                    </section>
                     <section class='tableBody'>
                         <table>
                             <thead>
@@ -72,7 +71,6 @@ class ComicViewHelper
                             <tbody>";
 
         foreach ($comics as $comic) {
-
             $output .= "<tr>";
             $output .= "<td><img src='$comic->image'></td>";
             $output .= "<td>$comic->name</td>";
@@ -82,9 +80,23 @@ class ComicViewHelper
             $output .= "<td>$comic->publisher</td>";
             $output .= "<td>$comic->release_year</td>";
             $output .= "<td>$comic->condition</td>";
-            $output .= "<td><div class='btnEdit'>Edit Comic</div></td>";
+            $output .= "<td>
+                            <form action='editComic.php?comic_id=$comic->id";
+            $output .= isset($comic->name) ? "&name=" . urlencode($comic->name) : "";
+            $output .= isset($comic->genre) ? "&genre=" . urlencode($comic->genre) : "";
+            $output .= isset($comic->author) ? "&author=" . urlencode($comic->author) : "";
+            $output .= isset($comic->illustrator) ? "&illustrator=" . urlencode($comic->illustrator) : "";
+            $output .= isset($comic->publisher) ? "&publisher=" . urlencode($comic->publisher) : "";
+            $output .= isset($comic->release_year) ? "&release_year=" . urlencode($comic->release_year) : "";
+            $output .= isset($comic->condition) ? "&condition=" . urlencode($comic->condition) : "";
+            $output .= "' method='POST'>
+                                <button class='btnEdit' type='submit'>Edit Comic</button>
+                            </form>
+                            <button class='btnEdit' type='submit'>Archive</button>
+                        </td>";
             $output .= "</tr>";
         }
+
         return "$table $output </tbody></table></section></main>";
     }
 }
