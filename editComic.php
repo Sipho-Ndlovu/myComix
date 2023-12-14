@@ -96,6 +96,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
                 <input type="submit" name="submit" value="Edit Comic">
             </form>
     </div>
-    <script src="src/editForm.js"></script>
+    <script src="src/form.js"></script>
     </body>
 </html>

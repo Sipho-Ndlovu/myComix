@@ -40,7 +40,14 @@ class ComicViewHelper
             $output .= "<td>$comic->publisher</td>";
             $output .= "<td>$comic->release_year</td>";
             $output .= "<td>$comic->condition</td>";
-            $output .= "<td><div class='btnCol'>Restore</div></td>";
+            $output .= "<td class='btnColumn'>";
+            $output .= "<form action='archiveComic.php?comic_id=$comic->id"; 
+            $output .= isset($comic->name) ? "&name=" . urlencode($comic->name) : "";
+            $output .= "&archived=" . urldecode(1);
+            $output .= "' method='POST'>
+                                <button class='btnCol' type='submit'>Restore</button>
+                            </form>
+                        </td>";
             $output .= "</tr>";
         }
         return "$table $output </tbody></table></section></main>";
@@ -91,8 +98,11 @@ class ComicViewHelper
             $output .= isset($comic->condition) ? "&condition=" . urlencode($comic->condition) : "";
             $output .= "' method='POST'>
                                 <button class='btnEdit' type='submit'>Edit Comic</button>
-                            </form>
-                            <form action='editComic.php?comic_id=$comic->id' method='POST'>
+                            </form>";
+            $output .= "<form action='archiveComic.php?comic_id=$comic->id"; 
+            $output .= isset($comic->name) ? "&name=" . urlencode($comic->name) : "";
+            $output .= "&archived=" . urldecode(0);
+            $output .= "' method='POST'>
                                 <button class='btnArchive' type='submit'>Archive</button>
                             </form>
                         </td>";
