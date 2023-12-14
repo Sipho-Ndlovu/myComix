@@ -80,7 +80,7 @@ class ComicViewHelper
             $output .= "<td>$comic->publisher</td>";
             $output .= "<td>$comic->release_year</td>";
             $output .= "<td>$comic->condition</td>";
-            $output .= "<td>
+            $output .= "<td class='btnColumn'>
                             <form action='editComic.php?comic_id=$comic->id";
             $output .= isset($comic->name) ? "&name=" . urlencode($comic->name) : "";
             $output .= isset($comic->genre) ? "&genre=" . urlencode($comic->genre) : "";
@@ -92,7 +92,9 @@ class ComicViewHelper
             $output .= "' method='POST'>
                                 <button class='btnEdit' type='submit'>Edit Comic</button>
                             </form>
-                            <button class='btnEdit' type='submit'>Archive</button>
+                            <form action='editComic.php?comic_id=$comic->id' method='POST'>
+                                <button class='btnArchive' type='submit'>Archive</button>
+                            </form>
                         </td>";
             $output .= "</tr>";
         }

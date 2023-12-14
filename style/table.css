@@ -7,6 +7,7 @@ main.table {
     margin-top: 5%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .tableHeader {
@@ -23,7 +24,7 @@ main.table {
 .tableBody {
     position: relative;
     margin-top: 30px;
-    width: 95%;
+    width: 97%;
     max-height: calc(80% - 1.6rem);
     background-color: var(--light-grey);
     margin: 0.8rem auto;
@@ -55,8 +56,8 @@ table {
 }
 
 td img {
-    width: 36px;
-    height: 36px;
+    width: 60px;
+    height: 65px;
     margin-right: .5rem;
     border-radius: 5px;
     vertical-align: middle;
@@ -68,7 +69,13 @@ table, th, td {
     text-align: left;
 }
 
-.btnEdit, .btnCol {
+.btnColumn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btnEdit, .btnCol, .btnArchive {
     display: flex;
     justify-content: center;
     border: none;
@@ -79,22 +86,15 @@ table, th, td {
     border-radius: 2rem;
 }
 
-.btnCol {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background-color: var(--dark-blue);
-    border-radius: 2rem;
-}
-
-.btnEdit:hover {
+.btnEdit:hover, .btnCol:hover, .btnArchive:hover {
     background-color: var(--light-blue);
     cursor: pointer;
 }
 
-.btnCol:hover {
-    background-color: var(--light-blue);
-    cursor: pointer;
+.btnArchive {
+    margin-top: 10%;
+    padding-right: 1.7rem;
+    padding-left: 2rem;
 }
 
 thead th {

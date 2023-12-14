@@ -57,10 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $query->execute();
     $conditionColumn = $query->fetch();
 
-    $query = $db->prepare("UPDATE `comics` SET `image` = :image WHERE `id` = :id");
-    $query->bindParam(':image', $release_year);
+    if (!$image == null) {
+        $query = $db->prepare("UPDATE `comics` SET `image` = :image WHERE `id` = :id");
+    $query->bindParam(':image', $image);
     $query->bindParam(':id', $book_id);
     $query->execute();
+    }
 
     header('Location: index.php');
     exit;

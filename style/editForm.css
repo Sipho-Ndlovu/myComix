@@ -72,7 +72,7 @@ body {
   .form input:focus {
     outline: 3px solid var(--blacker);
   }
-
+  
   .form input[type=submit] {
     background-color: var(--light-grey);
   }
