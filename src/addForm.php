@@ -9,8 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $condition = isset($_POST['Condition']) && $_POST['Condition'] !== '' ? $_POST['Condition'] : null;
     $image = isset($_POST['Image']) && $_POST['Image'] !== '' ? $_POST['Image'] : null;
 
-    $db = new PDO('mysql:host=db; dbname=MyComixDB', 'root', 'password');
+    $db = new PDO('mysql:host=host.docker.internal;port=3306;dbname=mycomixdb', 'root', 'Koolkat2001!');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 
     $query = $db->prepare('SELECT `id` FROM `authors` WHERE `name` = :author');
     $query->bindParam(':author', $author);

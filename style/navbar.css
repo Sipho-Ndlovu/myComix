@@ -1,16 +1,13 @@
 nav {
     display: flex;
     top: 0;
+    left: 0;
     z-index: 100;
     position: sticky;
     align-items: center;
     justify-content: space-between;
     background-color: var(--grey);
-    width: 100vw;
-}
-
-ul {
-    width: 30%;
+    width: 100%;
 }
 
 .logo p.title {
@@ -22,11 +19,11 @@ ul {
 }
 
 nav a {
+    display: flex;
     color: var(--blacker);
     text-decoration: none;
     list-style: none;
     white-space: nowrap;
-    padding: 0 20px;
 }
 
 nav a:hover {
@@ -35,12 +32,24 @@ nav a:hover {
 
 nav, ul {
     display: flex;
+    margin-right: 1rem;
     list-style: none;
 }
 
-nav .fa {
-    color: white;
+nav ul {
+    margin-right: 10vw;
+}
+
+nav .fa-bars {
+    color: var(--blacker);
     display: none;
+    cursor: pointer;
+}
+
+nav .fa-times {
+    color: var(--blacker);
+    display: none;
+    cursor: pointer;
 }
 
 i, li {
@@ -57,4 +66,39 @@ nav ul li a {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     display: flex;
+}
+
+@media screen and (max-width: 605px) {
+    nav .fa {
+      display: flex;
+    }
+
+    nav ul{
+        flex-direction: column;
+        position: absolute;
+        top:0;
+        right:0;
+        width:35%;
+        background-color: var(--white);
+        padding:10px;
+        height: 100vh;
+        z-index: 99;
+        transform: scaleX(0);
+        transition: .1s ease-in;
+        transform-origin: right;
+        margin-right: 0;
+    }
+    
+    nav ul.menu{
+        transform: scaleX(1);
+    }
+
+    nav ul li {
+        margin-top:10px;
+    }
+
+    nav ul li a{
+        font-size: 1rem;
+        font-weight: bold;
+    }
 }

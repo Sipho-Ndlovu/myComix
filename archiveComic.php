@@ -2,8 +2,9 @@
 $class = "error";
 $archived = isset($_GET['archived']) ? $_GET['archived'] : "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
-    $db = new PDO('mysql:host=db; dbname=MyComixDB', 'root', 'password');
+    $db = new PDO('mysql:host=host.docker.internal;port=3306;dbname=mycomixdb', 'root', 'Koolkat2001!');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
     $book_id = $_GET['comic_id'];
 
     if ($archived == 0){
@@ -38,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     <body>
         <div class='blur'></div>
         <div class="archiveFormContainer">
-            <div class="formClose archiveColse">&times;</div>
+            <div class="formClose">&times;</div>
             <form class="form" method="POST" >
                 <div>
                     <span>

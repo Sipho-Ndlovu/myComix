@@ -1,8 +1,10 @@
 <?php
 require_once 'src/ComicModel.php';
 require_once 'src/ComicViewHelper.php';
-$db = new PDO('mysql:host=db; dbname=myComixDB', 'root', 'password');
+$db = new PDO('mysql:host=host.docker.internal;port=3306;dbname=mycomixdb', 'root', 'Koolkat2001!');
 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+
 
 $comicsModel = new ComicsModel($db);
 
@@ -44,8 +46,10 @@ $comics = $comicsModel ->getCollection();
                 <i class="fa fa-bars" aria-hidden="true"></i>
 
                 <ul>
+                    <i class="fa fa-times" aria-hidden="true"></i>
                     <li><a href="index.php">My Collection</a></li>
                     <li><a href="archive.php">My Archive</a></li>
+                    <li><a href="#">My Profile</a></li>
                 </ul>
             </nav>
 
@@ -81,5 +85,6 @@ $comics = $comicsModel ->getCollection();
             </div>
         </div>
         <script src="src/addForm.js"></script>
+        <script src="src/navbar.js"></script>
     </body>
 </html>

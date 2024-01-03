@@ -6,7 +6,7 @@
 # https://github.com/Sequel-Ace/Sequel-Ace
 #
 # Host: 127.0.0.1 (MySQL 11.1.2-MariaDB-1:11.1.2+maria~ubu2204)
-# Database: myComixDB
+# Database: mycomixdb
 # Generation Time: 2023-11-24 10:09:01 +0000
 # ************************************************************
 

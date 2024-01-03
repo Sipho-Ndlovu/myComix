@@ -10,8 +10,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $condition = isset($_POST['Condition']) && $_POST['Condition'] !== '' ? $_POST['Condition'] : null;
     $image = isset($_POST['Image']) && $_POST['Image'] !== '' ? $_POST['Image'] : null;
 
-    $db = new PDO('mysql:host=db; dbname=MyComixDB', 'root', 'password');
+    $db = new PDO('mysql:host=host.docker.internal;port=3306;dbname=mycomixdb', 'root', 'Koolkat2001!');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
 
     $query = $db->prepare("UPDATE `comics` SET `name` = :Book_Title WHERE `id` = :id");
     $query->bindParam(':Book_Title', $book_title);

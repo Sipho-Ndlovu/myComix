@@ -25,6 +25,7 @@
 
 body {
     min-height: 100vh;
+    min-width: 500px;
 
     background-color: var(--black);
     overflow-x: hidden;
@@ -55,4 +56,5 @@ body div {
     font-size: .75rem;
     color: var(--blacker);
     width: 100vw;
+    bottom: 0;
 }
