@@ -37,7 +37,7 @@ nav, ul {
 }
 
 nav ul {
-    margin-right: 10vw;
+    margin-right: 7vw;
 }
 
 nav .fa-bars {
@@ -77,8 +77,8 @@ nav ul li a {
         flex-direction: column;
         position: absolute;
         top:0;
-        right:0;
-        width:35%;
+        right: 0;
+        width: 35%;
         background-color: var(--white);
         padding:10px;
         height: 100vh;
@@ -100,5 +100,14 @@ nav ul li a {
     nav ul li a{
         font-size: 1rem;
         font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    nav ul {
+        width: 45%;
+    }
+    nav ul li a {
+        font-size: .8rem;
     }
 }

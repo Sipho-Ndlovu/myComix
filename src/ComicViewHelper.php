@@ -32,7 +32,7 @@ class ComicViewHelper
         foreach ($comics as $comic) {
 
             $output .= "<tr>";
-            $output .= "<td><img src='$comic->image'></td>";
+            $output .= "<td><img class='cover' src='$comic->image'></td>";
             $output .= "<td>$comic->name</td>";
             $output .= "<td>$comic->genre</td>";
             $output .= "<td>$comic->author</td>";
@@ -79,7 +79,7 @@ class ComicViewHelper
 
         foreach ($comics as $comic) {
             $output .= "<tr>";
-            $output .= "<td><img src='$comic->image'></td>";
+            $output .= "<td><img class='cover' src='$comic->image'></td>";
             $output .= "<td>$comic->name</td>";
             $output .= "<td>$comic->genre</td>";
             $output .= "<td>$comic->author</td>";

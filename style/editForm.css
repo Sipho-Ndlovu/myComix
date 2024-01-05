@@ -39,6 +39,10 @@ body {
     justify-content: center;
     width: 100%; /* Occupy full width of form container */
 }
+.form span {
+    text-align: center;
+    white-space: nowrap;
+}
 
 .formClose {
     display: inline-block;

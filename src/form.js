@@ -11,4 +11,8 @@ close.addEventListener("click", function() {
     if (archived === "1") {
         window.location.href = "archive.php";
     }
+
+    else {
+        window.location.href = "index.php";
+    }
 });

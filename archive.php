@@ -21,6 +21,7 @@ $comics = $comicsModel ->getArchive();
         <link rel="stylesheet" href="style/table.css">
         <link rel="stylesheet" href="style/navbar.css">
         <link rel="stylesheet" href="style/form.css">
+        <link rel="stylesheet" href="style/image.css">
 
 
         <link 
@@ -57,11 +58,17 @@ $comics = $comicsModel ->getArchive();
             ?>
         </div>
 
+        <div class="coverContainer">
+            <div class="coverClose">&times;</div>
+            <img class="coverImage" src="" alt="">
+        </div>
+
         <div class="footer">
                &copy; Siphosenkosi Ndlovu 2023
             </div>
         </div>
         <script src="src/addForm.js"></script>
         <script src="src/navbar.js"></script>
+        <script src="src/image.js"></script>
     </body>
 </html>

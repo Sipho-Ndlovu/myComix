@@ -8,6 +8,7 @@ main.table {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .tableHeader {
@@ -63,6 +64,10 @@ td img {
     vertical-align: middle;
 }
 
+td img:hover {
+    cursor: pointer;
+}
+
 table, th, td {
     border-collapse: collapse;
     padding: 1rem;
@@ -116,6 +121,9 @@ tbody tr:hover {
     background-color: var(--blue-opaque);
 }
 
-@media (max-width: 1000px) {
-
+@media (max-width: 450px) {
+    main.table {
+        justify-content: flex-start; /* Align items to the start horizontally */
+        align-items: center; /* Center items vertically */
+    }
 }

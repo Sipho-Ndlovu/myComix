@@ -24,6 +24,7 @@ $comics = $comicsModel ->getCollection();
         <link rel="stylesheet" href="style/navbar.css">
         <link rel="stylesheet" href="style/form.css">
         <link rel="stylesheet" href="style/toolbar.css">
+        <link rel="stylesheet" href="style/image.css">
 
 
         <link 
@@ -64,6 +65,11 @@ $comics = $comicsModel ->getCollection();
             ?>
         </div>
 
+        <div class="coverContainer">
+            <div class="coverClose">&times;</div>
+            <img class="coverImage" src="" alt="">
+        </div>
+
         <div class="formContainer">
             <div class="formClose">&times;</div>
             <form class="form" method="POST" action="src/addForm.php">
@@ -86,5 +92,6 @@ $comics = $comicsModel ->getCollection();
         </div>
         <script src="src/addForm.js"></script>
         <script src="src/navbar.js"></script>
+        <script src="src/image.js"></script>
     </body>
 </html>
