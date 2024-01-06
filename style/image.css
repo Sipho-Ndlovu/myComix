@@ -20,19 +20,19 @@
     border-radius: 6px;
     height: 30px;
     line-height: 30px; /* Ensure the icon is vertically centered */
-  }
+}
 
-  .coverClose:hover {
+.coverClose:hover {
     background-color: var(--red);
     color: var(--white);
-  }
+}
 
-  .coverImage {
+.coverImage {
     max-height: 480px;
     max-width: 280px;
-  }
+}
 
-  .blur {
+.blur {
     filter: blur(5px);
     pointer-events: none;
-  }
+}

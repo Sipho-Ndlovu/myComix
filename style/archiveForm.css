@@ -26,7 +26,7 @@ justify-content: center;
 text-align: center;
 width: 25vw;
 min-height: 30vh;
-min-width: 200px;
+min-width: 400px;
 padding: 3.5rem;
 border-radius: 6px;
 background-color: var(--dark-blue);
@@ -83,4 +83,11 @@ z-index: 100;
     margin-top: 10%;
     display: flex;
     color: var(--red);
+}
+
+@media screen and (max-width: 605px) {
+    .archiveFormContainer {
+        min-width: 200px;
+        width: 70vw;
+    }
 }
