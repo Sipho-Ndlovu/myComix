@@ -1,0 +1,165 @@
+.content {
+    display: flex;
+}
+
+.content .logo, .content .forms {
+    flex: 1 1 50%;
+}
+
+.forms {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnToggle {
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    background-color: var(--light-grey);
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+.btnToggle:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    min-height: 30vh;
+    min-width: 280px;
+    padding: 3.5rem;
+    border-radius: 6px;
+    background-color: var(--dark-blue);
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.buttonContainer button:nth-child(0) {
+    margin-left: 5rem;
+}
+
+.buttonContainer button:nth-child(1) {
+    margin-right: 5rem;
+}
+
+.loginForm, .signupForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Occupy full width of form container */
+}
+
+.signupForm {
+    display: none;
+}
+
+.loginForm span, .signupForm span {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.loginForm input, .signupForm input {
+    width: 80%;
+    min-width: 150px; /* Occupy full width within the form */
+    margin-top: 0.5rem; /* Add spacing between inputs */
+    padding: 9px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+}
+
+.loginForm input:focus, .signupForm input:focus {
+    outline: 3px solid var(--blacker);
+}
+  
+.loginForm input[type=submit], .signupForm input[type=submit] {
+    background-color: var(--light-grey);
+}
+
+.loginForm input[type=submit]:hover, .signupForm input[type=submit]:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.loginForm input::placeholder, .signupForm input::placeholder {
+    font-size: 1rem;
+}
+
+@media (max-width: 605px) {
+    body {
+        overflow-y: hidden;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo {
+        min-height: 100px;
+    }
+    
+    .content .logo, .content .forms {
+        flex: none;
+    }
+
+    .btnToggle {
+        padding: 0.8rem;
+
+    }
+
+    .buttonContainer button:nth-child(0) {
+        margin-left: 2.5rem;
+    }
+    
+    .buttonContainer button:nth-child(1) {
+        margin-right: 2.5rem;
+    }
+
+    .formContainer {
+        min-width: 200px;
+    }
+
+    .loginForm input::placeholder, .signupForm input::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .inputContainer {
+        overflow-y: auto;
+        max-height: 180px;
+    }
+
+    .inputContainer::-webkit-scrollbar {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: var(--white-opaque);
+      }
+    
+    .inputContainer::-webkit-scrollbar-thumb {
+        border-radius: 0.5rem;
+        background-color: var(--black-opaque);
+        visibility: hidden;
+    }
+    
+    .inputContainer:hover::-webkit-scrollbar-thumb {
+        visibility: visible;
+    }
+}
