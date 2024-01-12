@@ -64,7 +64,7 @@
     width: 100%; /* Occupy full width of form container */
 }
 
-.signupForm {
+.loginForm {
     display: none;
 }
 
@@ -72,15 +72,24 @@
     text-align: center;
     white-space: nowrap;
 }
+.inputContainer, .submitContainer {
+    width: 80%;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+}
 
 .loginForm input, .signupForm input {
-    width: 80%;
-    min-width: 150px; /* Occupy full width within the form */
+    width: 100%;
     margin-top: 0.5rem; /* Add spacing between inputs */
     padding: 9px;
     font-size: 18px;
     border: none;
     border-radius: 6px;
+}
+
+.inputContainer input {
+    width: 100%;
 }
 
 .loginForm input:focus, .signupForm input:focus {
@@ -89,6 +98,7 @@
   
 .loginForm input[type=submit], .signupForm input[type=submit] {
     background-color: var(--light-grey);
+    min-width: 150px;
 }
 
 .loginForm input[type=submit]:hover, .signupForm input[type=submit]:hover {
@@ -142,6 +152,11 @@
     .inputContainer {
         overflow-y: auto;
         max-height: 180px;
+        min-width: 150px;
+    }
+
+    .submitContainer {
+        min-width: 150px;
     }
 
     .inputContainer::-webkit-scrollbar {

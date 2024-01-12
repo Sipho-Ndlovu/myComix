@@ -36,7 +36,9 @@
                             <input type="password" name="password" placeholder="Password">
                             <input type="password" name="confirmPassword" placeholder="Confirm Password">
                         </div>
-                        <input type="submit" name="signup" value="Signup">
+                        <div class="submitContainer">
+                            <input type="submit" name="signup" value="Signup">
+                        </div>
                 </div>
             </div>
     </section>
