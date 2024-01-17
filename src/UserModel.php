@@ -1,5 +1,6 @@
 <?php
 
+require_once 'User.php';
 class UserModel {
     private $db;
 
@@ -8,16 +9,16 @@ class UserModel {
     }
 
     public function signUp(User $user) {
-        $hashedPassword = password_hash($user->password, PASSWORD_DEFAULT);
-
-        $query = $this->db->prepare("INSERT INTO `users` (`username`, `password`, `name`, `email`) VALUES (?, ?, ?, ?)");
-        $query->execute([$user->username, $hashedPassword, $user->fullName, $user->email]);
-
-        return $query->rowCount() > 0;
-    }
+            $hashedPassword = password_hash($user->password, PASSWORD_DEFAULT);
+    
+            $query = $this->db->prepare('INSERT INTO `users` (`username`, `password`, `name`, `email`) VALUES (?, ?, ?, ?)');
+            $query->execute([$user->username, $hashedPassword, $user->name, $user->email]);
+    
+            return $query->rowCount() > 0;
+    }    
 
     public function login($username, $password) {
-        $query = $this->db->prepare("SELECT * FROM users WHERE username = ?");
+        $query = $this->db->prepare('SELECT * FROM `users` WHERE `username` = ?');
         $query->execute([$username]);
 
         $user = $query->fetch(PDO::FETCH_ASSOC);
