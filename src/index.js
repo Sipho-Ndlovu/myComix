@@ -1,13 +1,40 @@
 const login = document.querySelector('.btnLogin');
 const signup = document.querySelector('.btnSignup');
 
+
+$('#loginForm').submit(function (e) {
+    e.preventDefault();
+    var username = $('#loginUsername').val();
+    var password = $('#loginPassword').val();
+    var submit = $('#loginSubmit').val();
+    $.post('src/auth.php', {
+        username: username,
+        password: password,
+        submit: submit
+    }, function (data) {
+        $('#loginMessageContainer').html(data);
+
+        if (data.includes('error')) {
+            $('#loginMessageContainer').addClass('error');
+        } else {
+            $('#loginMessageContainer').removeClass('error');
+        }
+
+        if (data.includes('success')) {
+            $('#loginMessageContainer').addClass('success');
+        } else {
+            $('#loginMessageContainer').removeClass('success');
+        }
+    });
+});
+
 login.onclick = () => {
     const signupForm = document.querySelector('.signupForm');
     const loginForm = document.querySelector('.loginForm');
     if (signupForm) {
         loginForm.style.display = 'flex';
         signupForm.style.display = 'none';
-    } 
+    }
 }
 
 signup.onclick = () => {
@@ -17,7 +44,7 @@ signup.onclick = () => {
         signupForm.style.display = 'flex';
         loginForm.style.display = 'none';
 
-        $('#signupForm').submit(function(e) {
+        $('#signupForm').submit(function (e) {
             e.preventDefault();
             var name = $('#signupName').val();
             var email = $('#signupEmail').val();
@@ -32,7 +59,7 @@ signup.onclick = () => {
                 password: password,
                 confirmPassword: confirmPassword,
                 submit: submit
-            }, function(data) {
+            }, function (data) {
                 $('#signupMessageContainer').html(data);
 
                 if (data.includes('error')) {

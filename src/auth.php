@@ -11,7 +11,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($_POST['submit'] == 'Login') {
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $userModel->login($username, $password);
+
+        if (empty($username)) {
+            $errorMessage = "Please enter your username!";
+        } else if (empty($password)) {
+            $errorMessage = "Please enter your password!";
+        }
+        try {
+            if (isset($errorMessage)) {
+                throw new Exception($errorMessage);
+            }
+            $query = $db->prepare('SELECT * FROM `users` WHERE `username` = :username');
+            $query->bindParam(':username', $username, PDO::PARAM_STR);
+            $query->execute();
+            if ($query->rowCount() == 0) {
+                $errorMessage = "Invalid username or password!";
+                throw new Exception($errorMessage);
+            }
+            if (!$userModel->login($username, $password)) {
+                $errorMessage = "Invalid username or password!";
+                throw new Exception($errorMessage);
+            }
+            $userModel->login($username, $password);
+            echo '<script>document.querySelector("#loginMessageContainer").innerHTML = "Login Successful!";</script>';
+            echo '<script>document.querySelector("#loginMessageContainer").classList.add("success");</script>';
+            echo '<script>document.querySelector(".messageContainer").style.display = "flex";</script>';
+
+
+        } catch (Exception $e) {
+            $errorMessage = $e->getMessage();
+            echo '<script>console.error("' . addslashes($errorMessage) . '");</script>';
+
+            echo '<script>document.querySelector("#loginMessageContainer").innerHTML = "' . addslashes($errorMessage) . '";</script>';
+            echo '<script>document.querySelector("#loginMessageContainer").classList.add("error");</script>';
+        }
     } elseif ($_POST['submit'] == 'Signup') {
         $name = $_POST['name'];
         $username = $_POST['username'];
@@ -41,9 +74,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 $userModel->signUp($user);
 
-                // Display success message
-                echo '<script>document.querySelector(".signupForm .messageContainer").innerHTML = "Signup successful!";</script>';
+                echo '<script>document.querySelector("#signupMessageContainer").innerHTML = "Signup successful!";</script>';
+                echo '<script>document.querySelector("#signupMessageContainer").classList.add("success");</script>'; // Add success class
                 echo '<script>document.querySelector(".signupForm .messageContainer").style.display = "flex";</script>';
+
             } else {
                 throw new InvalidArgumentException("Passwords do not match!");
             }
@@ -53,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             // Display error message
             echo '<script>document.querySelector("#signupMessageContainer").innerHTML = "' . addslashes($e->getMessage()) . '";</script>';
-            echo '<script>document.querySelector("#signupMessageContainer").style.display = "flex";</script>';
+            echo '<script>document.querySelector(".messageContainer").style.display = "flex";</script>';
 
         }
     }

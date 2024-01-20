@@ -13,8 +13,3 @@ close.addEventListener("click", () => {
     formContainer.style.display = "none"; // Close the form
     page.classList.remove("blur"); // Remove the class to remove the background blur
 });
-
-
-
-
-

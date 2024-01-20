@@ -24,10 +24,11 @@
                 <form class="loginForm" id="loginForm" method="POST">
                     <span>Login</span>
                     <div class="inputContainer">
-                        <input type="hidden" name="submit_type" value="login">
                         <input type="text" name="username" id="loginUsername" placeholder="Username">
                         <input type="password" name="password" id="loginPassword" placeholder="Password">
-                        <span class=messageContainer></span>
+                    </div>
+                    <div class="messageContainer">
+                        <span id="loginMessageContainer"></span>
                     </div>
                     <div class="submitContainer">
                         <input type="submit" name="login" id="loginSubmit" value="Login">
@@ -36,7 +37,6 @@
                 <form class="signupForm" id="signupForm" method="POST">
                     <span>Signup</span>
                     <div class="inputContainer">
-                        <input type="hidden" name="submit_type" value="signup">
                         <input type="text" name="name" id="signupName" placeholder="Fullname">
                         <input type="text" name="email" id="signupEmail" placeholder="Email">
                         <input type="text" name="username" id="signupUsername" placeholder="Username">
@@ -44,8 +44,8 @@
                         <input type="password" name="confirmPassword" id="signupConfirmPassword"
                             placeholder="Confirm Password">
                     </div>
-                    <div id="signupMessageContainer" class="messageContainer">
-                        <span></span>
+                    <div class="messageContainer">
+                        <span id="signupMessageContainer"></span>
                     </div>
                     <div class="submitContainer">
                         <input type="submit" name="signup" id="signupSubmit" value="Signup">

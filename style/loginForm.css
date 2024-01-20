@@ -68,10 +68,6 @@
     display: none;
 }
 
-.loginForm span, .signupForm span {
-    text-align: center;
-    white-space: nowrap;
-}
 .inputContainer, .submitContainer {
     width: 80%;
     padding: 0;
@@ -109,6 +105,7 @@
 .loginForm input::placeholder, .signupForm input::placeholder {
     font-size: 1rem;
 }
+
 .messageContainer {
     margin-top: 0.3rem;
     margin-bottom: 0.3rem;
@@ -172,8 +169,26 @@
         min-width: 150px;
     }
 
+    .inputContainer input {
+        width: 95%;
+    }
+
     .messageContainer {
         max-width: 150px;
+    }
+
+    #signupMessageContainer {
+        max-width: 150px;
+        overflow-x: auto;
+        text-align: left;
+        white-space: nowrap;
+    }
+
+    #loginMessageContainer {
+        max-width: 150px;
+        overflow-x: auto;
+        text-align: left;
+        white-space: nowrap;
     }
 
     .submitContainer {

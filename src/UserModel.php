@@ -28,8 +28,10 @@ class UserModel {
             $_SESSION['username'] = $username;
             return true;
         }
+        else {
+            throw new InvalidArgumentException("Invalid username or password!");
+        }
 
-        return false;
     }
 
     public function logout() {
