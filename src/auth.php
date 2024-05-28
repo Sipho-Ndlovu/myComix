@@ -36,8 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo '<script>document.querySelector("#loginMessageContainer").innerHTML = "Login Successful!";</script>';
             echo '<script>document.querySelector("#loginMessageContainer").classList.add("success");</script>';
             echo '<script>document.querySelector(".messageContainer").style.display = "flex";</script>';
-
-
         } catch (Exception $e) {
             $errorMessage = $e->getMessage();
             echo '<script>console.error("' . addslashes($errorMessage) . '");</script>';

@@ -21,6 +21,7 @@ $('#loginForm').submit(function (e) {
 
         if (data.includes('success')) {
             $('#loginMessageContainer').addClass('success');
+            setTimeout(function() {window.location.href = "collection.php";}, 1000);
         } else {
             $('#loginMessageContainer').removeClass('success');
         }
@@ -53,6 +54,11 @@ $('#signupForm').submit(function (e) {
 
         if (data.includes('success')) {
             $('#signupMessageContainer').addClass('success');
+            $('#signupName').val("");
+            $('#signupEmail').val("");
+            $('#signupUsername').val("");
+            $('#signupPassword').val("");
+            $('#signupConfirmPassword').val("");
         } else {
             $('#signupMessageContainer').removeClass('success');
         }
