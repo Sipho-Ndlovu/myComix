@@ -1,0 +1,129 @@
+main.table {
+    width: 82vw;
+    height: 70vh;
+    background-color: var(--grey);
+    overflow: hidden;
+    border-radius: 0.8rem;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.tableHeader {
+    width: 100%;
+    min-height: 50px;
+    background-color: var(--dark-blue);
+    padding: 0.8rem 1rem;
+}
+
+.buttonField {
+    min-width: 160px;
+}
+
+.tableBody {
+    position: relative;
+    margin-top: 30px;
+    width: 97%;
+    max-height: calc(80% - 1.6rem);
+    background-color: var(--light-grey);
+    margin: 0.8rem auto;
+    border-radius: 2rem;
+    overflow: auto;
+}
+
+.tableBody::-webkit-scrollbar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--white-opaque);
+  }
+
+.tableBody::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: var(--black-opaque);
+    visibility: hidden;
+}
+
+.tableBody:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+td img {
+    width: 60px;
+    height: 65px;
+    margin-right: .5rem;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+td img:hover {
+    cursor: pointer;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    padding: 1rem;
+    text-align: left;
+}
+
+.btnColumn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btnEdit, .btnCol, .btnArchive {
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+    background-color: var(--dark-blue);
+    padding: 1rem;
+    border-radius: 2rem;
+}
+
+.btnEdit:hover, .btnCol:hover, .btnArchive:hover {
+    background-color: var(--light-blue);
+    cursor: pointer;
+}
+
+.btnArchive {
+    margin-top: 10%;
+    padding-right: 1.7rem;
+    padding-left: 2rem;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--dark-blue);
+}
+
+.footer {
+    margin-top: 15vh;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--lighter-grey);
+}
+
+tbody tr:hover {
+    background-color: var(--blue-opaque);
+}
+
+@media (max-width: 450px) {
+    main.table {
+        justify-content: flex-start; /* Align items to the start horizontally */
+        align-items: center; /* Center items vertically */
+    }
+}
