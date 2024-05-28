@@ -13,11 +13,12 @@ $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
 $filter = [];
 
-if (isset($_GET['filter_field']) && isset($_GET['filter_value'])) {
-  $filter = [
+if (isset($_GET['filter_field']) && isset($_GET['filter_value']) && isset($_GET['sort'])) {
+    $filter = [
     'filter_field' => $_GET['filter_field'],
-    'filter_value' => $_GET['filter_value']
-  ];
+    'filter_value' => $_GET['filter_value'],
+    'sort' => $_GET['sort']
+    ];
 }
 
 $comicsModel = new ComicsModel($db);

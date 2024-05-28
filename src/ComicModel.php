@@ -14,6 +14,7 @@ class ComicsModel
     public function getCollection(array $filter = [])
 {
     $whereClause = " `comics`.`archived` = 0 ";
+    $orderClause = "";
     if (!empty($filter['filter_field']) && !empty($filter['filter_value'])) {
         // Assuming 'filter_field' and 'filter_value' are the keys in the $filter array
         $filterField = $filter['filter_field'];
@@ -34,6 +35,27 @@ class ComicsModel
         }
     }
 
+    if (!empty($filter['sort'])) {
+        $sort = $filter['sort'];
+        if ($sort === 'name') {
+            $orderClause .= " ORDER BY `comics`.`name` ASC ";
+        } elseif ($sort === 'name_DESC') {
+            $orderClause .= " ORDER BY `comics`.`name` DESC ";
+        } elseif ($sort === 'author') {
+            $orderClause .= " ORDER BY `authors`.`name` ASC ";
+        } elseif ($sort === 'author_DESC') {
+            $orderClause .= " ORDER BY `authors`.`name` DESC ";
+        } elseif ($sort === 'genre') {
+            $orderClause .= " ORDER BY `genres`.`name` ASC ";
+        } elseif ($sort === 'genre_DESC') {
+            $orderClause .= " ORDER BY `genres`.`name` DESC ";
+        } elseif ($sort === 'condition') {
+            $orderClause .= " ORDER BY `comics`.`condition` ASC ";
+        } elseif ($sort === 'condition_DESC') {
+            $orderClause .= " ORDER BY `comics`.`condition` DESC ";
+        }
+        $whereClause .= $orderClause;
+    }
     $sql = "SELECT 
         `authors`.`name` AS 'author', `publishers`.`name` AS 'publisher',
         `illustrators`.`name` AS 'illustrator', `genres`.`name` AS 'genre',
